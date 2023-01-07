@@ -8,7 +8,7 @@ struct employee
 	string name, address;
 	int id, contact, salary;
 };
-
+bool checkId(int userId, int i);
 employee e[100];
 int total = 0;
 
@@ -17,6 +17,7 @@ void showData();
 void searchData();
 void updateData();
 void delData();
+bool checkId(int userId, int i);
 
 void login(string& userName, string& password);
 
@@ -110,7 +111,7 @@ void login(string& userName, string& password)
 	system("CLS");
 	string confUserName, confPassword;
 
-again: 
+again:
 	system("CLS");
 	cout << endl << endl;
 	cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
@@ -172,7 +173,7 @@ void employeeData()
 	cout << endl << endl;
 	cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 	cout << endl << endl;
-
+	int userId;
 	int choice;
 	cout << "\t \t \t \t \t How many employee's data do you want to enter?  ";
 	cin >> choice;
@@ -180,6 +181,7 @@ void employeeData()
 
 	for (int i = total; i < total+choice; i++)
 	{
+		int userInput;
 		system("CLS");
 		
 		cout << endl << endl;
@@ -191,8 +193,20 @@ void employeeData()
 		cout << "\t \t \t \t \t Enter Name of employee: ";
 		getline(cin >> ws, e[i].name);
 		cout << endl;
-		cout << "\t \t \t \t \t Enter ID of employee: ";
-		cin >> e[i].id;
+		back:
+			cout << "\t \t \t \t \t Enter ID of employee: ";
+			cin >> userId;
+			bool check = checkId(userId, i);
+			if (check == false) 
+			{
+				cout << "\t \t \t \t \t ID's should be unique!!" ;
+				cout << endl;
+				goto back;
+			}
+			else
+			{
+				e[i].id = userId;
+			}
 		cout << endl;
 		cout << "\t \t \t \t \t Enter Contact of employee: ";
 		cin >> e[i].contact;
@@ -205,6 +219,17 @@ void employeeData()
 		cout << endl << endl;
 	}
 	total = total + choice;
+}
+bool checkId(int userId, int i) 
+{
+	for (int x = 0; x < i; x++)
+	{
+		if (e[x].id == userId) 
+		{
+			return false;
+		}
+	}
+	return true;
 }
 
 //function to display employee data
