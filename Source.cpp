@@ -197,11 +197,12 @@ void employeeData()
 		back:
 			cout << "\t \t \t \t \t Enter ID of employee: ";
 			cin >> userId;
+			cout << endl;
 			bool check = checkId(userId, i);
 			if (check == false) 
 			{
 				cout << "\t \t \t \t \t ID's should be unique!!" ;
-				cout << endl;
+				cout << endl << endl;
 				goto back;
 			}
 			else
@@ -220,17 +221,6 @@ void employeeData()
 		cout << endl << endl;
 	}
 	total = total + choice;
-}
-bool checkId(int userId, int i) 
-{
-	for (int x = 0; x < i; x++)
-	{
-		if (e[x].id == userId) 
-		{
-			return false;
-		}
-	}
-	return true;
 }
 
 //function to display employee data
@@ -464,10 +454,21 @@ void updateData()
 					cout << endl << endl;
 					cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 					cout << endl << endl;
-
-					cout << "\t \t \t \t \t Enter Employee's ID: ";
-					cin >> e[i].id;
-					cout << endl;
+					int userId;
+				back:
+					cout << "\t \t \t \t \t Enter ID of employee: ";
+					cin >> userId;
+					bool check = checkId(userId, i);
+					if (check == false)
+					{
+						cout << "\t \t \t \t \t ID's should be unique!!";
+						cout << endl;
+						goto back;
+					}
+					else
+					{
+						e[i].id = userId;
+					}
 				}
 
 				else if (choice == 4)
@@ -673,4 +674,17 @@ void delData()
 		cout << "\t \t \t \t \t Your record is empty!!";
 		Sleep(800);
 	}
+}
+
+
+bool checkId(int userId, int i)
+{
+	for (int x = 0; x < i; x++)
+	{
+		if (e[x].id == userId)
+		{
+			return false;
+		}
+	}
+	return true;
 }
