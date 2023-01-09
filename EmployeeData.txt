@@ -1,0 +1,27 @@
+	 	 	 	 	 Data of Employee 2
+
+	 	 	 	 	 Name Of Employee: haider
+	 	 	 	 	 ID Of Employee: 1
+	 	 	 	 	 Contact Of Employee: 03308168766
+	 	 	 	 	 Address Of Employee: h#p-42, Punjab Town, Wirelessgate, Malir, Karachi.
+	 	 	 	 	 Salary Of Employee: 345678
+
+
+	 	 	 	 	 Data of Employee 2
+
+	 	 	 	 	 Name Of Employee: Usman
+	 	 	 	 	 ID Of Employee: 2
+	 	 	 	 	 Contact Of Employee: 03368568825
+	 	 	 	 	 Address Of Employee: h#c-136, shamsi society, malir, karachi.
+	 	 	 	 	 Salary Of Employee: 3456782
+
+
+	 	 	 	 	 Data of Employee 2
+
+	 	 	 	 	 Name Of Employee: Muhammad Ali
+	 	 	 	 	 ID Of Employee: 3
+	 	 	 	 	 Contact Of Employee: 03330630440
+	 	 	 	 	 Address Of Employee: h#p-42, Punjab town, wirelessgate, malir, karachi.
+	 	 	 	 	 Salary Of Employee: 1234567890
+
+

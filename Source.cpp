@@ -2,6 +2,7 @@
 #include<string>
 #include<Windows.h>
 #include<conio.h>
+#include<fstream>
 using namespace std;
 struct employee
 {
@@ -9,9 +10,10 @@ struct employee
 	string contact;
 	int id, salary;
 };
-bool checkId(int userId, int i);
 employee e[100];
 int total = 0;
+fstream dataFile;
+int z = 0;
 
 void employeeData();
 void showData();
@@ -19,6 +21,8 @@ void searchData();
 void updateData();
 void delData();
 bool checkId(int userId, int i);
+void write();
+void read();
 
 void login(string& userName, string& password);
 
@@ -69,6 +73,10 @@ int main()
 		cout << endl << endl;
 		cout << "\t \t \t \t \t Press 7 to exit.";
 		cout << endl << endl;
+		cout << "\t \t \t \t \t Press 8 to write your data.";
+		cout << endl << endl;
+		cout << "\t \t \t \t \t Press 9 to read data.";
+		cout << endl << endl;
 		cout << "\t \t \t \t \t Enter your choice: ";
 		cin >> choice;
 		cout << endl;
@@ -96,6 +104,12 @@ int main()
 			break;
 		case 7:
 			goto adios;
+			break;
+		case 8:
+			write();
+			break;
+		case 9:
+			read();
 			break;
 		default:
 			cout << "\t \t \t \t \t \a Invalid choice!!";
@@ -209,7 +223,6 @@ void employeeData()
 			{
 				e[i].id = userId;
 			}
-		cout << endl;
 		cout << "\t \t \t \t \t Enter Contact of employee: ";
 		cin >> e[i].contact;
 		cout << endl;
@@ -687,4 +700,59 @@ bool checkId(int userId, int i)
 		}
 	}
 	return true;
+}
+
+
+void write()
+{
+	if (total != 0)
+	{
+		dataFile.open("EmployeeData.txt", ios::out);
+		if (!dataFile)
+		{
+			system("CLS");
+
+			cout << endl << endl;
+			cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+			cout << endl << endl;
+
+			cout << "\t \t \t \t \t File not created!!";
+		}
+
+		else
+		{
+			for (z = 0; z < total; z++)
+			{
+				dataFile << "\t \t \t \t \t Data of Employee " << 1 + 1;
+				dataFile << endl << endl;
+				dataFile << "\t \t \t \t \t Name Of Employee: " << e[z].name;
+				dataFile << endl;
+				dataFile << "\t \t \t \t \t ID Of Employee: " << e[z].id;
+				dataFile << endl;
+				dataFile << "\t \t \t \t \t Contact Of Employee: " << e[z].contact;
+				dataFile << endl;
+				dataFile << "\t \t \t \t \t Address Of Employee: " << e[z].address;
+				dataFile << endl;
+				dataFile << "\t \t \t \t \t Salary Of Employee: " << e[z].salary;
+				dataFile << endl << endl << endl;
+			}
+		}
+	}
+
+	else
+	{
+		system("CLS");
+
+		cout << endl << endl;
+		cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+		cout << endl << endl;
+
+		cout << "\t \t \t \t \t Your record is empty!!";
+		Sleep(800);
+	}
+}
+
+void read()
+{
+
 }
