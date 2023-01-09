@@ -6,7 +6,8 @@ using namespace std;
 struct employee
 {
 	string name, address;
-	int id, contact, salary;
+	string contact;
+	int id, salary;
 };
 bool checkId(int userId, int i);
 employee e[100];
@@ -280,7 +281,7 @@ void showData()
 void searchData()
 {
 	int id;
-
+	bool found = false;
 	system("CLS");
 
 	cout << endl << endl;
@@ -297,7 +298,7 @@ void searchData()
 			if (id==e[i].id)
 			{
 				system("CLS");
-
+				found = true;
 				cout << endl << endl;
 				cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 				cout << endl << endl;
@@ -315,24 +316,23 @@ void searchData()
 				cout << "\t \t \t \t \t Employee Salary: " << e[i].salary;
 				cout << endl;
 				cout << endl;
-
 				Sleep(5000);
 
 				break;
 			}
+		}
 
-			if (i = total-1)
-			{
-				system("CLS");
+		if (found = false)
+		{
+			system("CLS");
 
-				cout << endl << endl;
-				cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
-				cout << endl << endl;
+			cout << endl << endl;
+			cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+			cout << endl << endl;
 
-				cout << "\t \t \t \t \t No such record found!!";
+			cout << "\t \t \t \t \t No such record found!!";
 
-				Sleep(5000);
-			}
+			Sleep(5000);
 		}
 	}
 
@@ -355,7 +355,7 @@ void updateData()
 {
 	int choice;
 	int id;
-
+	bool found = false;
 	system("CLS");
 
 	cout << endl << endl;
@@ -372,6 +372,7 @@ void updateData()
 		{
 			if (id == e[i].id)
 			{
+				found = true;
 				cout << "\t \t \t \t \t \t \t Data of employee " << i + 1;
 				cout << endl << endl;
 				cout << "\t \t \t \t \t Employee Name: " << e[i].name;
@@ -543,20 +544,20 @@ void updateData()
 
 				break;
 			}
-
-			if (i = total-1)
-			{
-				system("CLS");
-
-				cout << endl << endl;
-				cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
-				cout << endl << endl;
-
-				cout << "\t \t \t \t \t No such record found!!";
-			}
 		}
 
+		if (found==false)
+		{
+			system("CLS");
+
+			cout << endl << endl;
+			cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+			cout << endl << endl;
+
+			cout << "\t \t \t \t \t No such record found!!";
+		}
 	}
+
 	else
 	{
 		system("CLS");
@@ -576,6 +577,7 @@ void delData()
 {
 	int id;
 	int choice;
+	bool found = false;
 
 	cout << endl << endl;
 	cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
@@ -619,6 +621,7 @@ void delData()
 			{
 				if (id == e[i].id)
 				{
+					found = true;
 					for(int j=i; j<total;j++)
 					{ 
 					e[j].name = e[j + 1].name;
@@ -631,18 +634,18 @@ void delData()
 					Sleep(800);
 					break;
 					}
-
-					if (i == total - 1)
-					{
-						system("CLS");
-
-						cout << endl << endl;
-						cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
-						cout << endl << endl;
-
-						cout << "\t \t \t \t \t No such Record found!!";
-					}
 				}
+			}
+
+			if (found==false)
+			{
+				system("CLS");
+
+				cout << endl << endl;
+				cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+				cout << endl << endl;
+
+				cout << "\t \t \t \t \t No such Record found!!";
 			}
 		}
 
