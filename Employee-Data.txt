@@ -1,0 +1,18 @@
+	 	 	 	 	 Data of Employee 1
+
+	 	 	 	 	 Name Of Employee: Talha Haider
+	 	 	 	 	 ID Of Employee: 1
+	 	 	 	 	 Contact Of Employee: 45678
+	 	 	 	 	 Address Of Employee: ertyguj
+	 	 	 	 	 Salary Of Employee: 345678
+
+
+	 	 	 	 	 Data of Employee 2
+
+	 	 	 	 	 Name Of Employee: Usman Shamsi
+	 	 	 	 	 ID Of Employee: 2
+	 	 	 	 	 Contact Of Employee: 345678
+	 	 	 	 	 Address Of Employee: djhswe
+	 	 	 	 	 Salary Of Employee: 456789
+
+

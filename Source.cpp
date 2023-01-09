@@ -11,8 +11,8 @@ struct employee
 	int id, salary;
 };
 employee e[100];
-int total = 0;
 fstream dataFile;
+int total = 0;
 int z = 0;
 
 void employeeData();
@@ -69,13 +69,13 @@ int main()
 		cout << endl << endl;
 		cout << "\t \t \t \t \t Press 5 to delete data.";
 		cout << endl << endl;
-		cout << "\t \t \t \t \t Press 6 to logout.";
+		cout << "\t \t \t \t \t Press 6 to Write your Data.";
 		cout << endl << endl;
-		cout << "\t \t \t \t \t Press 7 to exit.";
+		cout << "\t \t \t \t \t Press 7 to Read your Data.";
 		cout << endl << endl;
-		cout << "\t \t \t \t \t Press 8 to write your data.";
+		cout << "\t \t \t \t \t Press 8 to Logout.";
 		cout << endl << endl;
-		cout << "\t \t \t \t \t Press 9 to read data.";
+		cout << "\t \t \t \t \t Press 9 to Exit.";
 		cout << endl << endl;
 		cout << "\t \t \t \t \t Enter your choice: ";
 		cin >> choice;
@@ -100,16 +100,16 @@ int main()
 			delData();
 			break;
 		case 6:
-			login(userName, password);
-			break;
-		case 7:
-			goto adios;
-			break;
-		case 8:
 			write();
 			break;
-		case 9:
+		case 7:
 			read();
+			break;
+		case 8:
+			login(userName, password);
+			break;
+		case 9:
+			goto adios;
 			break;
 		default:
 			cout << "\t \t \t \t \t \a Invalid choice!!";
@@ -707,7 +707,7 @@ void write()
 {
 	if (total != 0)
 	{
-		dataFile.open("EmployeeData.txt", ios::out);
+		dataFile.open("Employee-Data.txt", ios::out);
 		if (!dataFile)
 		{
 			system("CLS");
@@ -723,7 +723,7 @@ void write()
 		{
 			for (z = 0; z < total; z++)
 			{
-				dataFile << "\t \t \t \t \t Data of Employee " << 1 + 1;
+				dataFile << "\t \t \t \t \t Data of Employee " << z + 1;
 				dataFile << endl << endl;
 				dataFile << "\t \t \t \t \t Name Of Employee: " << e[z].name;
 				dataFile << endl;
@@ -736,6 +736,10 @@ void write()
 				dataFile << "\t \t \t \t \t Salary Of Employee: " << e[z].salary;
 				dataFile << endl << endl << endl;
 			}
+
+			cout << "\t \t \t \t \t TASK COMPLETED SUCCESSFULLY!!";
+			Sleep(1000);
+			system("CLS");
 		}
 	}
 
@@ -754,5 +758,21 @@ void write()
 
 void read()
 {
+	system("CLS");
 
+	cout << endl << endl;
+	cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+	cout << endl << endl;
+
+	ifstream dataFile;
+	dataFile.open("Employee-Data.txt", ios::in);
+
+	string message;
+
+	while (getline(dataFile, message))
+	{
+		cout << message;
+		cout << endl;
+		Sleep(1000);
+	}
 }
