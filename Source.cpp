@@ -471,7 +471,7 @@ void updateData()
 				back:
 					cout << "\t \t \t \t \t Enter ID of employee: ";
 					cin >> userId;
-					bool check = checkId(userId, i);
+					bool check = checkId(userId, total);
 					if (check == false)
 					{
 						cout << "\t \t \t \t \t ID's should be unique!!";
@@ -481,6 +481,7 @@ void updateData()
 					else
 					{
 						e[i].id = userId;
+						break;
 					}
 				}
 
