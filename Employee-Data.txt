@@ -1,27 +1,27 @@
 	 	 	 	 	 Data of Employee 1
 
-	 	 	 	 	 Name Of Employee: Talha Haider
+	 	 	 	 	 Name Of Employee: Talha Haider.
 	 	 	 	 	 ID Of Employee: 1
 	 	 	 	 	 Contact Of Employee: 03308168766
-	 	 	 	 	 Address Of Employee: H#p-42, Punjab Town, Karachi.
-	 	 	 	 	 Salary Of Employee: 1234567890
+	 	 	 	 	 Address Of Employee: h#c-136, Shamsi Society, Karachi.
+	 	 	 	 	 Salary Of Employee: 2300000
 
 
 	 	 	 	 	 Data of Employee 2
 
-	 	 	 	 	 Name Of Employee: Usman Shamsi
+	 	 	 	 	 Name Of Employee: Muhammad Ali
 	 	 	 	 	 ID Of Employee: 2
-	 	 	 	 	 Contact Of Employee: 03368568825
-	 	 	 	 	 Address Of Employee: jhasfjwenc
-	 	 	 	 	 Salary Of Employee: 1234567890
+	 	 	 	 	 Contact Of Employee: 03330630440
+	 	 	 	 	 Address Of Employee: h#c-136, Shamsi Society, Karachi.
+	 	 	 	 	 Salary Of Employee: 2500000
 
 
 	 	 	 	 	 Data of Employee 3
 
-	 	 	 	 	 Name Of Employee: Muhammad Ali
+	 	 	 	 	 Name Of Employee: Muhammad Qasim.
 	 	 	 	 	 ID Of Employee: 3
-	 	 	 	 	 Contact Of Employee: 03330630440
-	 	 	 	 	 Address Of Employee: kjashdjwefn
-	 	 	 	 	 Salary Of Employee: 1234567890
+	 	 	 	 	 Contact Of Employee: 03333055944
+	 	 	 	 	 Address Of Employee: h#c-136, Shamsi Society, Karachi.
+	 	 	 	 	 Salary Of Employee: 2500000
 
 

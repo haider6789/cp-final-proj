@@ -23,23 +23,28 @@ void delData();
 bool checkId(int userId, int i);
 void write();
 void read();
-
 void login(string& userName, string& password);
 
 int main() 
 {
 	string userName, password;
+
 	cout << endl << endl;
 	cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 	cout << endl << endl;
+
 	cout << "\t \t \t \t \t \t \t \t \t \t SIGNUP PAGE";
 	cout << endl << endl << endl << endl;
+
+
 	cout << "\t \t \t \t \t Enter username: ";
 	getline(cin >> ws, userName);
 	cout << endl;
+
 	cout << "\t \t \t \t \t Enter Password: ";
 	getline(cin >> ws, password);
 	cout << endl << endl;
+
 	cout << "\t \t \t \t \t \t \t \t \t SIGNING YOU IN";
 	for (int i = 0; i < 5; i++)
 	{
@@ -149,7 +154,7 @@ again:
 			Sleep(800);
 		}
 		cout << endl << endl;
-		cout << "\t \t \t \t \t \t \t \t \tLOGGED IN SUCCESSFULLY.";
+		cout << "\t \t \t \t \t \t \t \t \t LOGGED IN SUCCESSFULLY.";
 		cout << endl;
 		Sleep(2000);
 		system("CLS");
@@ -170,6 +175,7 @@ again:
 		system("CLS");
 		goto again;
 	}
+
 	else if (confPassword != password)
 	{
 		cout << "\t \t \t \t \t Entered password is incorrect";
@@ -690,6 +696,7 @@ void delData()
 	}
 }
 
+//Function to check if the id is unique or not
 
 bool checkId(int userId, int i)
 {
@@ -703,6 +710,7 @@ bool checkId(int userId, int i)
 	return true;
 }
 
+//Function to write data in file
 
 void write()
 {
@@ -724,6 +732,10 @@ void write()
 		{
 			for (z = 0; z < total; z++)
 			{
+				dataFile << endl << endl;
+				dataFile << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+				dataFile << endl << endl;
+
 				dataFile << "\t \t \t \t \t Data of Employee " << z + 1;
 				dataFile << endl << endl;
 				dataFile << "\t \t \t \t \t Name Of Employee: " << e[z].name;
@@ -757,23 +769,52 @@ void write()
 	}
 }
 
+//Function to read data from file
+
 void read()
 {
-	system("CLS");
-
-	cout << endl << endl;
-	cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
-	cout << endl << endl;
-
-	ifstream dataFile;
-	dataFile.open("Employee-Data.txt", ios::in);
-
-	string message;
-
-	while (getline(dataFile, message))
+	if (total != 0)
 	{
-		cout << message;
-		cout << endl;
-		Sleep(1000);
+		system("CLS");
+
+		cout << endl << endl;
+		cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+		cout << endl << endl;
+
+		ifstream dataFile;
+		dataFile.open("Employee-Data.txt", ios::in);
+
+		if (!dataFile)
+		{
+			system("CLS");
+
+			cout << endl << endl;
+			cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+			cout << endl << endl;
+
+			cout << "\t \t \t \t \t File not created!!";
+		}
+		else
+		{
+			string message;
+			while (getline(dataFile, message))
+			{
+				cout << message;
+				cout << endl;
+				Sleep(1000);
+			}
+		}
+	}
+
+	else
+	{
+		system("CLS");
+
+		cout << endl << endl;
+		cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+		cout << endl << endl;
+
+		cout << "\t \t \t \t \t Your record is empty!!";
+		Sleep(800);
 	}
 }
