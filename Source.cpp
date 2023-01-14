@@ -619,8 +619,6 @@ void delData()
 			cout << endl << endl;
 			cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 			cout << endl << endl;
-			cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
-			cout << endl << endl; 
 
 			total = 0;
 			cout << "\t \t \t \t \t All Record is Deleted.";
@@ -650,12 +648,17 @@ void delData()
 					e[j].contact = e[j + 1].contact;
 					e[j].address = e[j + 1].address;
 					e[j].salary = e[j + 1].salary;
-					total--;
-					cout << "\t \t \t \t \t RECORD DELETED SUCCEFULLY!!";
 					Sleep(800);
-					break;
 					}
+					total--;
+					break;
 				}
+				
+			}
+
+			if (found == true)
+			{
+				cout << "\t \t \t \t \t Record Deleted Successfully!";
 			}
 
 			if (found==false)
@@ -730,11 +733,13 @@ void write()
 
 		else
 		{
+			system("CLS");
+			dataFile << endl << endl;
+			dataFile << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+			dataFile << endl << endl;
+
 			for (z = 0; z < total; z++)
 			{
-				dataFile << endl << endl;
-				dataFile << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
-				dataFile << endl << endl;
 
 				dataFile << "\t \t \t \t \t Data of Employee " << z + 1;
 				dataFile << endl << endl;
@@ -775,11 +780,6 @@ void read()
 {
 	if (total != 0)
 	{
-		system("CLS");
-
-		cout << endl << endl;
-		cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
-		cout << endl << endl;
 
 		ifstream dataFile;
 		dataFile.open("Employee-Data.txt", ios::in);
@@ -796,6 +796,8 @@ void read()
 		}
 		else
 		{
+			system("CLS");
+
 			string message;
 			while (getline(dataFile, message))
 			{
