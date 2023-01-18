@@ -18,6 +18,7 @@ fstream dataFile;
 int total = 0;
 int z = 0;
 
+//Functions of entire program
 void employeeData();
 void showData();
 void searchData();
@@ -429,19 +430,25 @@ void updateData()
 
 			if (id == e[i].id)
 			{
+
 				//displaying the data of employee before updating
 
 				found = true;
 				cout << "\t \t \t \t \t \t \t Data of employee " << i + 1;
 				cout << endl << endl;
+
 				cout << "\t \t \t \t \t Employee Name: " << e[i].name;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee ID: " << e[i].id;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee Contact: " << e[i].contact;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee Address: " << e[i].address;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee Salary: " << e[i].salary;
 				cout << endl;
 				cout << endl;
@@ -457,18 +464,25 @@ void updateData()
 
 				cout << "\t \t \t \t \t ~UPDATING DATA ";
 				cout << endl;
+
 				cout << "\t \t \t \t \t If you want to update Employee's whole data PRESS 1.";
-				cout << endl;
+				cout << endl << endl;
+
 				cout << "\t \t \t \t \t If you want to update Employee's Name PRESS 2.";
-				cout << endl;
+				cout << endl << endl;
+
 				cout << "\t \t \t \t \t If you want to update Employee's ID PRESS 3.";
-				cout << endl;
+				cout << endl << endl;
+
 				cout << "\t \t \t \t \t If you want to update Employee's Contact number PRESS 4.";
-				cout << endl;
+				cout << endl << endl;
+
 				cout << "\t \t \t \t \t If you want to update Employee's Address PRESS 5.";
-				cout << endl;
+				cout << endl << endl;
+
 				cout << "\t \t \t \t \t If you want to update Employee's Salary PRESS 6.";
-				cout << endl;
+				cout << endl << endl;
+
 				cout << "\t \t \t \t \t Enter your choice: ";
 				cin >> choice;
 				cout << endl;
@@ -487,15 +501,19 @@ void updateData()
 					cout << "\t \t \t \t \t Enter Employee's New Name: ";
 					getline(cin >> ws, e[i].name);
 					cout << endl;
+
 					cout << "\t \t \t \t \t Enter Employee's New ID: ";
 					cin >> e[i].id;
 					cout << endl;
+
 					cout << "\t \t \t \t \t Enter Employee's New Contact  Number: ";
 					cin >> e[i].contact;
 					cout << endl;
+
 					cout << "\t \t \t \t \t Enter Employee's New Address: ";
 					getline(cin >> ws, e[i].address);
 					cout << endl;
+
 					cout << "\t \t \t \t \t Enter Employee's New Salary: ";
 					cin >> e[i].salary;
 					cout << endl;
@@ -606,14 +624,19 @@ void updateData()
 
 				cout << "\t \t \t \t \t UPDATED RECORD";
 				cout << endl << endl;
+
 				cout << "\t \t \t \t \t Employee's Name: " << e[i].name;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee's ID: " << e[i].id;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee's Contact Number: " << e[i].contact;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee's Address: " << e[i].address;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee's Salary: " << e[i].salary;
 				cout << endl;
 
@@ -664,8 +687,10 @@ void delData()
 	{
 		cout << "\t \t \t \t \t Press 1 to Delete Full Record.";
 		cout << endl;
+
 		cout << "\t \t \t \t \t Press 2 to Delete Specific Record.";
 		cout << endl;
+
 		cout << "\t \t \t \t \t Enter your choice: ";
 		cin >> choice;
 
@@ -765,13 +790,19 @@ void delData()
 
 bool checkId(int userId, int i)
 {
+
 	for (int x = 0; x < i; x++)
 	{
+
 		if (e[x].id == userId)
 		{
+
 			return false;
+
 		}
+
 	}
+
 	return true;
 }
 
@@ -779,8 +810,10 @@ bool checkId(int userId, int i)
 
 void write()
 {
+
 	if (total != 0)
 	{
+
 		dataFile.open("Employee-Data.txt", ios::out);
 		if (!dataFile)
 		{
@@ -805,14 +838,19 @@ void write()
 
 				dataFile << "\t \t \t \t \t Data of Employee " << z + 1;
 				dataFile << endl << endl;
+
 				dataFile << "\t \t \t \t \t Name Of Employee: " << e[z].name;
 				dataFile << endl;
+
 				dataFile << "\t \t \t \t \t ID Of Employee: " << e[z].id;
 				dataFile << endl;
+
 				dataFile << "\t \t \t \t \t Contact Of Employee: " << e[z].contact;
 				dataFile << endl;
+
 				dataFile << "\t \t \t \t \t Address Of Employee: " << e[z].address;
 				dataFile << endl;
+
 				dataFile << "\t \t \t \t \t Salary Of Employee: " << e[z].salary;
 				dataFile << endl << endl << endl;
 			}
@@ -820,6 +858,7 @@ void write()
 			cout << "\t \t \t \t \t TASK COMPLETED SUCCESSFULLY!!";
 			Sleep(1000);
 			system("CLS");
+
 		}
 
 		dataFile.close();
@@ -842,6 +881,7 @@ void write()
 
 void read()
 {
+
 	if (total != 0)
 	{
 
@@ -850,6 +890,7 @@ void read()
 
 		if (!dataFile)
 		{
+
 			system("CLS");
 
 			cout << endl << endl;
@@ -857,7 +898,9 @@ void read()
 			cout << endl << endl;
 
 			cout << "\t \t \t \t \t File not created!!";
+
 		}
+
 		else
 		{
 			system("CLS");
@@ -866,13 +909,17 @@ void read()
 
 			while (getline(dataFile, message))
 			{
+
 				cout << message;
 				cout << endl;
 				Sleep(900);
+
 			}
+
 		}
 
 		dataFile.close();
+
 	}
 
 	else
@@ -886,4 +933,5 @@ void read()
 		cout << "\t \t \t \t \t Your record is empty!!";
 		Sleep(800);
 	}
+
 }
