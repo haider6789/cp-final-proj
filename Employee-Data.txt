@@ -4,28 +4,28 @@
 
 	 	 	 	 	 Data of Employee 1
 
-	 	 	 	 	 Name Of Employee: Haider
+	 	 	 	 	 Name Of Employee: Haider Abbas
 	 	 	 	 	 ID Of Employee: 1
 	 	 	 	 	 Contact Of Employee: 03308168766
 	 	 	 	 	 Address Of Employee: Karachi
-	 	 	 	 	 Salary Of Employee: 345678
+	 	 	 	 	 Salary Of Employee: 23000
 
 
 	 	 	 	 	 Data of Employee 2
 
-	 	 	 	 	 Name Of Employee: Usman
+	 	 	 	 	 Name Of Employee: Danish Ali Imran
 	 	 	 	 	 ID Of Employee: 2
-	 	 	 	 	 Contact Of Employee: 03368568825
+	 	 	 	 	 Contact Of Employee: 03333333333
 	 	 	 	 	 Address Of Employee: Karachi
-	 	 	 	 	 Salary Of Employee: 3456789
+	 	 	 	 	 Salary Of Employee: 23000
 
 
 	 	 	 	 	 Data of Employee 3
 
-	 	 	 	 	 Name Of Employee: Qasim
+	 	 	 	 	 Name Of Employee: Sakeena Yameen
 	 	 	 	 	 ID Of Employee: 3
-	 	 	 	 	 Contact Of Employee: 03330630440
+	 	 	 	 	 Contact Of Employee: 03304444444
 	 	 	 	 	 Address Of Employee: Karachi
-	 	 	 	 	 Salary Of Employee: 987654321
+	 	 	 	 	 Salary Of Employee: 23000
 
 

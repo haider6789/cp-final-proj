@@ -1,15 +1,18 @@
 #include <iostream>
 #include<string>
 #include<Windows.h>
-#include<conio.h>
 #include<fstream>
 using namespace std;
+
+//structure for different type of data of employees
 struct employee
 {
 	string name, address;
 	string contact;
 	int id, salary;
 };
+
+//array to store data of employees
 employee e[100];
 fstream dataFile;
 int total = 0;
@@ -37,15 +40,16 @@ int main()
 	cout << endl << endl << endl << endl;
 
 
-	cout << "\t \t \t \t \t Enter username: ";
+	cout << "\t \t \t \t \t Enter username: ";     //taking username
 	getline(cin >> ws, userName);
 	cout << endl;
 
-	cout << "\t \t \t \t \t Enter Password: ";
+	cout << "\t \t \t \t \t Enter Password: ";    //taking password
 	getline(cin >> ws, password);
 	cout << endl << endl;
 
 	cout << "\t \t \t \t \t \t \t \t \t SIGNING YOU IN";
+
 	for (int i = 0; i < 5; i++)
 	{
 		cout << ".";
@@ -55,10 +59,12 @@ int main()
 	cout << "\t \t \t \t \t \t \t \t \t SIGNUP SUCCESSFULL!";
 	Sleep(1000);
 	system("CLS");
+
 	login(userName, password);
 
 
 	int choice;
+
 	while (true)
 	{
 		cout << endl << endl;
@@ -87,35 +93,46 @@ int main()
 		cout << endl;
 		cout << endl;
 
+//switch condition to check which action user wants to perform
+
 		switch (choice)
 		{
 		case 1:
 			employeeData();
 			break;
+
 		case 2:
 			showData();
 			break;
+
 		case 3:
 			searchData();
 			break;
+
 		case 4:
 			updateData();
 			break;
+
 		case 5:
 			delData();
 			break;
+
 		case 6:
 			write();
 			break;
+
 		case 7:
 			read();
 			break;
+
 		case 8:
 			login(userName, password);
 			break;
+
 		case 9:
 			goto adios;
 			break;
+
 		default:
 			cout << "\t \t \t \t \t \a Invalid choice!!";
 		}
@@ -124,10 +141,14 @@ int main()
 adios:;//exit*
 }
 
+
 //Function for login
+
+//passed username and password by reference from main
 
 void login(string& userName, string& password)
 {
+
 	system("CLS");
 	string confUserName, confPassword;
 
@@ -138,21 +159,27 @@ again:
 	cout << endl << endl; 
 	cout << "\t \t \t \t \t \t \t \t \t \t LOGIN PAGE";
 	cout << endl << endl << endl << endl;
+
 	cout << "\t \t \t \t \t Confirm username: ";
 	getline(cin >> ws, confUserName);
 	cout << endl;
+
 	cout << "\t \t \t \t \t Confirm Password: ";
 	getline(cin >> ws, confPassword);
 	cout << endl;
 
+	//comparing the actual username and password set by user with confirm username and pass
+
 	if (confUserName == userName && confPassword == password)
 	{
 		cout << "\t \t \t \t \t \t \t \t \t LOGGING YOU IN";
+
 		for (int i = 0; i < 5; i++)
 		{
 			cout << ".";
 			Sleep(800);
 		}
+
 		cout << endl << endl;
 		cout << "\t \t \t \t \t \t \t \t \t LOGGED IN SUCCESSFULLY.";
 		cout << endl;
@@ -194,12 +221,15 @@ void employeeData()
 	cout << endl << endl;
 	cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 	cout << endl << endl;
+
 	int userId;
 	int choice;
+
 	cout << "\t \t \t \t \t How many employee's data do you want to enter?  ";
 	cin >> choice;
 	cout << endl;
 
+	//taking employee's data as input
 	for (int i = total; i < total+choice; i++)
 	{
 		int userInput;
@@ -211,9 +241,13 @@ void employeeData()
 
 		cout << "\t \t \t \t \t \t \t Enter data of employee " << i + 1;
 		cout << endl << endl;
+
+		//NAME
 		cout << "\t \t \t \t \t Enter Name of employee: ";
 		getline(cin >> ws, e[i].name);
 		cout << endl;
+
+		//here we are taking id of the employees and checking if it is unique or not?
 		back:
 			cout << "\t \t \t \t \t Enter ID of employee: ";
 			cin >> userId;
@@ -229,12 +263,18 @@ void employeeData()
 			{
 				e[i].id = userId;
 			}
+
+		//CONTACT
 		cout << "\t \t \t \t \t Enter Contact of employee: ";
 		cin >> e[i].contact;
 		cout << endl;
+
+		//ADDRESS
 		cout << "\t \t \t \t \t Enter Address of employee: ";
 		getline(cin >> ws, e[i].address);
 		cout << endl;
+
+		//SALARY
 		cout << "\t \t \t \t \t Enter Salary of Employee: ";
 		cin >> e[i].salary;
 		cout << endl << endl;
@@ -252,8 +292,12 @@ void showData()
 	cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 	cout << endl << endl;
 
+	//if condition to check if array is empty or not
+
 	if (total != 0)
 	{
+		//loop to show data stored in array
+
 		for (int i = 0; i < total; i++)
 		{
 			cout << "\t \t \t \t \t \t \t Data of employee " << i + 1;
@@ -302,8 +346,10 @@ void searchData()
 		cout << "\t \t \t \t \t Enter ID of the employee of which you want to search data: ";
 		cin >> id;
 		cout << endl;
+
 		for (int i = 0; i < total; i++)
 		{
+
 			if (id==e[i].id)
 			{
 				system("CLS");
@@ -377,10 +423,14 @@ void updateData()
 		cout << "\t \t \t \t \t Enter ID of the employee of which you want to update data: ";
 		cin >> id;
 		cout << endl;
+
 		for (int i = 0; i < total; i++)
 		{
+
 			if (id == e[i].id)
 			{
+				//displaying the data of employee before updating
+
 				found = true;
 				cout << "\t \t \t \t \t \t \t Data of employee " << i + 1;
 				cout << endl << endl;
@@ -434,19 +484,19 @@ void updateData()
 					cout << endl << endl;
 
 
-					cout << "\t \t \t \t \t Enter Employee's Name: ";
+					cout << "\t \t \t \t \t Enter Employee's New Name: ";
 					getline(cin >> ws, e[i].name);
 					cout << endl;
-					cout << "\t \t \t \t \t Enter Employee's ID: ";
+					cout << "\t \t \t \t \t Enter Employee's New ID: ";
 					cin >> e[i].id;
 					cout << endl;
-					cout << "\t \t \t \t \t Enter Employee's Contact  Number: ";
+					cout << "\t \t \t \t \t Enter Employee's New Contact  Number: ";
 					cin >> e[i].contact;
 					cout << endl;
-					cout << "\t \t \t \t \t Enter Employee's Address: ";
+					cout << "\t \t \t \t \t Enter Employee's New Address: ";
 					getline(cin >> ws, e[i].address);
 					cout << endl;
-					cout << "\t \t \t \t \t Enter Employee's Salary: ";
+					cout << "\t \t \t \t \t Enter Employee's New Salary: ";
 					cin >> e[i].salary;
 					cout << endl;
 				}
@@ -461,7 +511,7 @@ void updateData()
 					cout << endl << endl;
 
 
-					cout << "\t \t \t \t \t Enter Employee's Name: ";
+					cout << "\t \t \t \t \t Enter Employee's New Name: ";
 					getline(cin >> ws, e[i].name);
 					cout << endl;
 				}
@@ -474,8 +524,11 @@ void updateData()
 					cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 					cout << endl << endl;
 					int userId;
+
+					//checking if the updated id is unique or not
+
 				back:
-					cout << "\t \t \t \t \t Enter ID of employee: ";
+					cout << "\t \t \t \t \t Enter Employee's New ID: ";
 					cin >> userId;
 					bool check = checkId(userId, total);
 					if (check == false)
@@ -499,7 +552,7 @@ void updateData()
 					cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 					cout << endl << endl;
 
-					cout << "\t \t \t \t \t Enter Employee's Contact Number: ";
+					cout << "\t \t \t \t \t Enter Employee's New Contact Number: ";
 					cin >> e[i].contact;
 					cout << endl;
 				}
@@ -512,7 +565,7 @@ void updateData()
 					cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 					cout << endl << endl;
 
-					cout << "\t \t \t \t \t Enter Employee's Address: ";
+					cout << "\t \t \t \t \t Enter Employee's New Address: ";
 					getline(cin >> ws, e[i].address);
 					cout << endl;
 				}
@@ -525,7 +578,7 @@ void updateData()
 					cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 					cout << endl << endl;
 
-					cout << "\t \t \t \t \t Enter Employee's Salary: ";
+					cout << "\t \t \t \t \t Enter Employee's New Salary: ";
 					cin >> e[i].salary;
 					cout << endl;
 				}
@@ -549,6 +602,7 @@ void updateData()
 				cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 				cout << endl << endl;
 
+				//displaying data of employee after updating
 
 				cout << "\t \t \t \t \t UPDATED RECORD";
 				cout << endl << endl;
@@ -592,6 +646,8 @@ void updateData()
 	}
 }
 
+
+
 //function to delete data
 
 void delData()
@@ -615,6 +671,8 @@ void delData()
 
 		if (choice == 1)
 		{
+			//deleting overall record
+
 			system("CLS");
 			cout << endl << endl;
 			cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
@@ -627,6 +685,8 @@ void delData()
 
 		else if (choice == 2)
 		{
+			//deleting specific employee's data
+
 			system("CLS");
 
 			cout << endl << endl;
@@ -638,17 +698,19 @@ void delData()
 
 			for (int i = 0; i < total; i++)
 			{
+
 				if (id == e[i].id)
 				{
 					found = true;
+
 					for(int j=i; j<total;j++)
 					{ 
-					e[j].name = e[j + 1].name;
-					e[j].id = e[j + 1].id;
-					e[j].contact = e[j + 1].contact;
-					e[j].address = e[j + 1].address;
-					e[j].salary = e[j + 1].salary;
-					Sleep(800);
+					    e[j].name = e[j + 1].name;
+					    e[j].id = e[j + 1].id;
+					    e[j].contact = e[j + 1].contact;
+					    e[j].address = e[j + 1].address;
+					    e[j].salary = e[j + 1].salary;
+					    Sleep(800);
 					}
 					total--;
 					break;
@@ -759,6 +821,8 @@ void write()
 			Sleep(1000);
 			system("CLS");
 		}
+
+		dataFile.close();
 	}
 
 	else
@@ -782,7 +846,7 @@ void read()
 	{
 
 		ifstream dataFile;
-		dataFile.open("Employee-Data.txt", ios::in);
+		dataFile.open("Employee-Data.txt", ios::app);
 
 		if (!dataFile)
 		{
@@ -799,13 +863,16 @@ void read()
 			system("CLS");
 
 			string message;
+
 			while (getline(dataFile, message))
 			{
 				cout << message;
 				cout << endl;
-				Sleep(1000);
+				Sleep(900);
 			}
 		}
+
+		dataFile.close();
 	}
 
 	else
