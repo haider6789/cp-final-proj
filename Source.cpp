@@ -71,26 +71,38 @@ int main()
 		cout << endl << endl;
 		cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 		cout << endl << endl;
+
+
 		cout << "\t \t \t \t \t Press 1 to enter data.";
 		cout << endl << endl;
+
 		cout << "\t \t \t \t \t Press 2 to show data.";
 		cout << endl << endl;
+
 		cout << "\t \t \t \t \t Press 3 to search data.";
 		cout << endl << endl;
+
 		cout << "\t \t \t \t \t Press 4 to update data.";
 		cout << endl << endl;
+
 		cout << "\t \t \t \t \t Press 5 to delete data.";
 		cout << endl << endl;
+
 		cout << "\t \t \t \t \t Press 6 to Write your Data.";
 		cout << endl << endl;
+
 		cout << "\t \t \t \t \t Press 7 to Read your Data.";
 		cout << endl << endl;
+
 		cout << "\t \t \t \t \t Press 8 to Logout.";
 		cout << endl << endl;
+
 		cout << "\t \t \t \t \t Press 9 to Exit.";
 		cout << endl << endl;
+
 		cout << "\t \t \t \t \t Enter your choice: ";
 		cin >> choice;
+
 		cout << endl;
 		cout << endl;
 
@@ -139,7 +151,7 @@ int main()
 		}
 	}
 
-adios:;//exit*
+adios: ;      //exit*
 }
 
 
@@ -361,17 +373,23 @@ void searchData()
 
 				cout << "\t \t \t \t \t \t \t Data of employee " << i + 1;
 				cout << endl << endl;
+
 				cout << "\t \t \t \t \t Employee Name: " << e[i].name;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee ID: " << e[i].id;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee Contact: " << e[i].contact;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee Address: " << e[i].address;
 				cout << endl;
+
 				cout << "\t \t \t \t \t Employee Salary: " << e[i].salary;
 				cout << endl;
 				cout << endl;
+
 				Sleep(5000);
 
 				break;
@@ -868,7 +886,7 @@ void write()
 	{
 		system("CLS");
 
-		cout << endl << endl;
+		cout << endl << endl; 
 		cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
 		cout << endl << endl;
 
