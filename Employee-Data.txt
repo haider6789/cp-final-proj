@@ -2,30 +2,56 @@
 
 	 	 	 	 	 	 	 	 	 EMPLOYEE MANAGEMENT SYSTEM
 
-	 	 	 	 	 Data of Employee 1
+	 	 	 	 	 Data of Employee 
 
 	 	 	 	 	 Name Of Employee: Haider
 	 	 	 	 	 ID Of Employee: 1
-	 	 	 	 	 Contact Of Employee: 033333333
+	 	 	 	 	 Contact Of Employee: 03308168766
+	 	 	 	 	 Address Of Employee: Karachi
+	 	 	 	 	 Salary Of Employee: 230000
+
+
+	 	 	 	 	 Data of Employee 
+
+	 	 	 	 	 Name Of Employee: Usman
+	 	 	 	 	 ID Of Employee: 2
+	 	 	 	 	 Contact Of Employee: 03368568825
+	 	 	 	 	 Address Of Employee: Karachi
+	 	 	 	 	 Salary Of Employee: 2300000
+
+
+
+
+	 	 	 	 	 	 	 	 	 EMPLOYEE MANAGEMENT SYSTEM
+
+	 	 	 	 	 Data of Employee 
+
+	 	 	 	 	 Name Of Employee: Qasim
+	 	 	 	 	 ID Of Employee: 3
+	 	 	 	 	 Contact Of Employee: 03330630440
 	 	 	 	 	 Address Of Employee: Karachi
 	 	 	 	 	 Salary Of Employee: 987654321
 
 
-	 	 	 	 	 Data of Employee 2
+	 	 	 	 	 Data of Employee 
 
 	 	 	 	 	 Name Of Employee: Ali
-	 	 	 	 	 ID Of Employee: 3
+	 	 	 	 	 ID Of Employee: 4
+	 	 	 	 	 Contact Of Employee: 03333055944
+	 	 	 	 	 Address Of Employee: Karachi
+	 	 	 	 	 Salary Of Employee: 98766789
+
+
+
+
+	 	 	 	 	 	 	 	 	 EMPLOYEE MANAGEMENT SYSTEM
+
+	 	 	 	 	 Data of Employee 
+
+	 	 	 	 	 Name Of Employee: Umar
+	 	 	 	 	 ID Of Employee: 5
 	 	 	 	 	 Contact Of Employee: 0333333333
 	 	 	 	 	 Address Of Employee: Karachi
-	 	 	 	 	 Salary Of Employee: 999999999
-
-
-	 	 	 	 	 Data of Employee 3
-
-	 	 	 	 	 Name Of Employee: Qasim
-	 	 	 	 	 ID Of Employee: 4
-	 	 	 	 	 Contact Of Employee: 033333333
-	 	 	 	 	 Address Of Employee: Karachi
-	 	 	 	 	 Salary Of Employee: 999999999
+	 	 	 	 	 Salary Of Employee: 98765678
 
 

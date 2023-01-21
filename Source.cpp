@@ -12,11 +12,13 @@ struct employee
 	int id, salary;
 };
 
+
 //array to store data of employees
 employee e[100];
 fstream dataFile;
 int total = 0;
 int z = 0;
+
 
 //Functions of entire program
 void employeeData();
@@ -51,11 +53,11 @@ int main()
 
 	cout << "\t \t \t \t \t \t \t \t \t SIGNING YOU IN";
 
-	for (int i = 0; i < 5; i++)
-	{
-		cout << ".";
-		Sleep(800);
-	}
+	//for (int i = 0; i < 5; i++)
+	//{
+	//	cout << ".";
+	//	Sleep(800);
+	//}
 	cout << endl << endl;
 	cout << "\t \t \t \t \t \t \t \t \t SIGNUP SUCCESSFULL!";
 	Sleep(1000);
@@ -187,11 +189,11 @@ again:
 	{
 		cout << "\t \t \t \t \t \t \t \t \t LOGGING YOU IN";
 
-		for (int i = 0; i < 5; i++)
-		{
-			cout << ".";
-			Sleep(800);
-		}
+		//for (int i = 0; i < 5; i++)
+		//{
+		//	cout << ".";
+		//	Sleep(800);
+		//}
 
 		cout << endl << endl;
 		cout << "\t \t \t \t \t \t \t \t \t LOGGED IN SUCCESSFULLY.";
@@ -291,8 +293,10 @@ void employeeData()
 		cout << "\t \t \t \t \t Enter Salary of Employee: ";
 		cin >> e[i].salary;
 		cout << endl << endl;
+
 	}
 	total = total + choice;
+
 }
 
 //function to display employee data
@@ -832,7 +836,9 @@ void write()
 	if (total != 0)
 	{
 
-		dataFile.open("Employee-Data.txt", ios::out);
+		//dataFile.open("Employee-Data.txt", ios::out);
+
+		ofstream dataFile("Employee-Data.txt", ios::app);
 		if (!dataFile)
 		{
 			system("CLS");
@@ -848,13 +854,11 @@ void write()
 		{
 			system("CLS");
 			dataFile << endl << endl;
-			dataFile << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
-			dataFile << endl << endl;
 
 			for (z = 0; z < total; z++)
 			{
 
-				dataFile << "\t \t \t \t \t Data of Employee " << z + 1;
+				dataFile << "\t \t \t \t \t Data of Employee ";
 				dataFile << endl << endl;
 
 				dataFile << "\t \t \t \t \t Name Of Employee: " << e[z].name;
@@ -873,13 +877,17 @@ void write()
 				dataFile << endl << endl << endl;
 			}
 
+			cout << endl << endl;
+			cout << "\t \t \t \t \t \t \t \t \t EMPLOYEE MANAGEMENT SYSTEM";
+			cout << endl << endl;
+
 			cout << "\t \t \t \t \t TASK COMPLETED SUCCESSFULLY!!";
 			Sleep(1000);
 			system("CLS");
 
 		}
 
-		dataFile.close();
+		/*dataFile.close();*/
 	}
 
 	else
@@ -903,8 +911,8 @@ void read()
 	if (total != 0)
 	{
 
-		ifstream dataFile;
-		dataFile.open("Employee-Data.txt", ios::app);
+		ifstream dataFile("Employee-Data.txt");
+		//dataFile.open, ios::app);
 
 		if (!dataFile)
 		{
